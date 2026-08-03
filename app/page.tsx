@@ -1,5 +1,6 @@
 import { ProductCard } from "@/components/ProductCard";
 import { QrCode, Link2, ImageIcon } from "lucide-react";
+import KineticGrid from "@/components/ui/kinetic-grid";
 
 export default function Home() {
   const products = [
@@ -27,27 +28,29 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-full">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-32 overflow-hidden bg-background">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background to-background"></div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-foreground tracking-tight leading-tight md:leading-tight">
-            A suíte suíça para <br className="hidden md:block" />
-            <span className="text-primary">criadores e devs</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto font-sans leading-relaxed">
-            Utilitários web rápidos, elegantes e diretos ao ponto. Descubra nossas ferramentas
-            projetadas para economizar seu tempo com um design impecável.
-          </p>
-          <div className="flex items-center justify-center gap-4">
-            <a 
-              href="#produtos" 
-              className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors shadow-md"
-            >
-              Explorar Soluções
-            </a>
+      <KineticGrid>
+        <section className="relative pt-24 pb-32 overflow-hidden bg-transparent">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
+          <div className="container mx-auto px-4 relative z-10 text-center">
+            <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-foreground tracking-tight leading-tight md:leading-tight">
+              A suíte suíça para <br className="hidden md:block" />
+              <span className="text-primary">criadores e devs</span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto font-sans leading-relaxed">
+              Utilitários web rápidos, elegantes e diretos ao ponto. Descubra nossas ferramentas
+              projetadas para economizar seu tempo com um design impecável.
+            </p>
+            <div className="flex items-center justify-center gap-4">
+              <a 
+                href="#produtos" 
+                className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors shadow-md"
+              >
+                Explorar Soluções
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </KineticGrid>
 
       {/* Products Grid */}
       <section id="produtos" className="py-24 bg-card/30">

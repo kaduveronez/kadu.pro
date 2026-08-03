@@ -1,3 +1,12 @@
+# Design System - Kadu Hub
+
+O design do ecossistema Kadu baseia-se em cantos levemente arredondados (`radius: 0.3rem`) e um sistema de sombras detalhado. A paleta transita entre tons terrosos, laranjas e neutros no modo claro, e fundos escuros com contrastes vibrantes no modo escuro.
+
+## Fonte de Verdade do CSS
+
+Todo projeto deve obrigatoriamente utilizar a seguinte configuração de CSS como base para a estilização global (Tailwind CSS v4):
+
+```css
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -149,3 +158,4 @@
     @apply bg-background text-foreground antialiased;
   }
 }
+```

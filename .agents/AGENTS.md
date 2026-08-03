@@ -1,3 +1,45 @@
+# Projeto e Contexto - Kadu
+
+**Visão Geral do Projeto**
+- **Nome da Marca:** Kadu
+- **Domínio Principal:** kadu.pro
+- **Nicho:** Desenvolvimento de soluções gerais de tecnologia e ferramentas utilitárias.
+- **Arquitetura de Produtos:** Ecossistema baseado em um site principal (hub/portfólio de soluções) no domínio raiz (kadu.pro), com ferramentas específicas hospedadas em subdomínios.
+- **Primeiro Produto Integrado:** Gerador de QR Code (disponível em qrcode.kadu.pro).
+
+**Infraestrutura e Deploy**
+- **Plataforma de Hospedagem:** Vercel.
+- **Ambientes:** 
+  - Production: Deploy automático da branch principal (main/master) no domínio oficial.
+  - Preview: Deploys automáticos em Pull Requests/branches secundárias.
+- **Estratégia de Roteamento:** Configuração de subdomínios (Wildcard ou individuais) apontando para os respectivos projetos/apps na Vercel.
+
+**Identidade Visual e Design System**
+- **Logo:** Temporariamente utilizar tipografia estilizada com o nome "Kadu".
+- **Design System:** Utiliza Tailwind CSS (v4) com Design System próprio e suporte a Dark Mode via classe `.dark`.
+
+**Tipografia**
+- **Sans-serif (Padrão/UI):** Oxanium, sans-serif
+- **Serif (Títulos/Destaques textuais):** Merriweather, serif
+- **Monospace (Código/Dados técnicos):** Fira Code, monospace
+
+**Estilos Globais e Variáveis de Tema**
+- **Formas e Profundidade:** Cantos levemente arredondados (`radius: 0.3rem`) e sistema de sombras para profundidade.
+- **Cores Principais:**
+  - Background Light: #fdfbf7 | Background Dark: #1c1917
+  - Primary Light: #b45309 | Primary Dark: #f97316
+  - Secondary Light: #e4c090 | Secondary Dark: #57534e
+  - Destructive Light: #991b1b | Destructive Dark: #dc2626
+
+**Diretrizes para Agentes de IA (AI Prompts & Regras de Geração)**
+1. **Framework e Estilo:** Todo código gerado deve assumir o uso de React/Next.js (ou framework definido pelo usuário) e Tailwind CSS v4.
+2. **Uso de Cores Semânticas:** Nunca utilize cores fixas arbitrárias (ex: `bg-orange-500`). Utilize as variáveis do tema (ex: `bg-primary`, `text-muted-foreground`, `border-border`).
+3. **Tipografia Correta:** Use as fontes estipuladas. Para textos gerais e botões, use `font-sans`. Para títulos em destaque ou editoriais, `font-serif`. Para dados e código, `font-mono`.
+4. **Design Adaptativo (Dark Mode):** Todo componente criado deve ser testado ou pensado para funcionar harmoniosamente nas versões Light e Dark configuradas nas raízes do CSS.
+5. **Estrutura de Hub:** O site em kadu.pro deve ter uma arquitetura de "Portal", com navegação e cards que redirecionem de forma clara para as ferramentas do ecossistema (como qrcode.kadu.pro).
+
+**CSS Padrão de Referência**
+```css
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -122,6 +164,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   
+  /* Fontes e Radius */
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
@@ -131,6 +174,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
+  /* Sombras */
   --shadow-2xs: var(--shadow-2xs);
   --shadow-xs: var(--shadow-xs);
   --shadow-sm: var(--shadow-sm);
@@ -149,3 +193,4 @@
     @apply bg-background text-foreground antialiased;
   }
 }
+```

@@ -16,12 +16,14 @@ export default function Home() {
       description: "Encurtador de links, geração de links para WhatsApp e outras ferramentas.",
       href: "#",
       icon: Link2,
+      disabled: true,
     },
     {
       title: "Calculadora Universal (Em breve)",
       description: "Calcule de tudo: espaços, tamanhos, pesos e conversores diversos.",
       href: "#",
       icon: ImageIcon,
+      disabled: true,
     }
   ];
 
@@ -102,6 +104,7 @@ export default function Home() {
                 href={product.href}
                 icon={product.icon}
                 badge={product.badge}
+                disabled={product.disabled}
               />
             ))}
           </div>

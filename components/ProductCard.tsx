@@ -7,16 +7,12 @@ interface ProductCardProps {
   href: string;
   icon: LucideIcon;
   badge?: string;
+  disabled?: boolean;
 }
 
-export function ProductCard({ title, description, href, icon: Icon, badge }: ProductCardProps) {
-  return (
-    <Link 
-      href={href} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="group relative flex flex-col p-6 rounded-xl bg-card border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-    >
+export function ProductCard({ title, description, href, icon: Icon, badge, disabled }: ProductCardProps) {
+  const content = (
+    <>
       <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
         <Icon className="w-24 h-24 text-primary" />
       </div>
@@ -42,10 +38,33 @@ export function ProductCard({ title, description, href, icon: Icon, badge }: Pro
         {description}
       </p>
       
-      <div className="flex items-center text-sm font-semibold text-primary mt-auto">
-        Acessar Ferramenta
-        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+      {!disabled && (
+        <div className="flex items-center text-sm font-semibold text-primary mt-auto">
+          Acessar Ferramenta
+          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+        </div>
+      )}
+    </>
+  );
+
+  const baseClasses = "group relative flex flex-col p-6 rounded-xl bg-card border border-border shadow-sm overflow-hidden";
+  
+  if (disabled) {
+    return (
+      <div className={`${baseClasses} opacity-60 grayscale`}>
+        {content}
       </div>
+    );
+  }
+
+  return (
+    <Link 
+      href={href} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className={`${baseClasses} hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
+    >
+      {content}
     </Link>
   );
 }

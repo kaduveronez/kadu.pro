@@ -51,7 +51,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-foreground tracking-tight leading-tight md:leading-tight">
-              A suíte suíça para <br className="hidden md:block" />
+              O ecossistema definitivo para <br className="hidden md:block" />
               <span className="text-primary">criadores e devs</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto font-sans leading-relaxed">

@@ -334,8 +334,8 @@ export default function KineticGrid({
     if (!canvas) return;
 
     const setSize = () => {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
       canvas.width = w;
       canvas.height = h;
       sizeRef.current = { w, h };

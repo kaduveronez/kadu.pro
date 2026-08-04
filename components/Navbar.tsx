@@ -5,6 +5,8 @@ import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import Image from "next/image";
+
 export function Navbar() {
   const { theme, resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -17,7 +19,8 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="font-serif text-2xl font-bold text-primary tracking-wide">KADU</span>
+          <Image src="/logos/logo-light.svg" alt="KADU" width={100} height={32} className="block dark:hidden h-8 w-auto" priority />
+          <Image src="/logos/logo-dark.svg" alt="KADU" width={100} height={32} className="hidden dark:block h-8 w-auto" priority />
         </Link>
 
         <div className="flex items-center gap-6">

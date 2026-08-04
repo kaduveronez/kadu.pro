@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Termos de Uso",
+  description: "Termos de uso e responsabilidades ao utilizar as ferramentas e serviços do ecossistema KADU.",
+};
+
 export default function TermosPage() {
   return (
     <div className="container mx-auto px-4 py-24 min-h-[calc(100vh-140px)]">

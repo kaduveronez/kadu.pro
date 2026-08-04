@@ -45,8 +45,25 @@ export default function Home() {
     },
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "KADU",
+    url: "https://kadu.pro",
+    description: "Utilitários web rápidos, elegantes e diretos ao ponto. Descubra nossas ferramentas.",
+    publisher: {
+      "@type": "Organization",
+      name: "KADU",
+      logo: "https://kadu.pro/icon.png"
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <KineticGrid>
         <section className="relative pt-24 pb-32 overflow-hidden bg-transparent">

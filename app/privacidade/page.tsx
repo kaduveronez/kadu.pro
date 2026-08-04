@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacidade",
+  description: "Política de Privacidade do ecossistema KADU. Entenda como tratamos e protegemos seus dados.",
+};
+
 export default function PrivacidadePage() {
   return (
     <div className="container mx-auto px-4 py-24 min-h-[calc(100vh-140px)]">

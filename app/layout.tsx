@@ -22,8 +22,50 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Kadu | Hub",
-  description: "Ecossistema Kadu de soluções de tecnologia",
+  metadataBase: new URL("https://kadu.pro"),
+  title: {
+    default: "KADU | O ecossistema definitivo para criadores e devs",
+    template: "%s | KADU",
+  },
+  description: "Utilitários web rápidos, elegantes e diretos ao ponto. Descubra nossas ferramentas projetadas para economizar seu tempo com um design impecável.",
+  keywords: ["utilitários web", "desenvolvimento", "ferramentas", "qr code", "kadu", "tecnologia", "produtividade"],
+  authors: [{ name: "KADU", url: "https://kadu.pro" }],
+  creator: "KADU",
+  publisher: "KADU",
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "https://kadu.pro",
+    title: "KADU | O ecossistema definitivo para criadores e devs",
+    description: "Utilitários web rápidos, elegantes e diretos ao ponto. Descubra nossas ferramentas projetadas para economizar seu tempo com um design impecável.",
+    siteName: "KADU",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KADU Ecossistema",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KADU | O ecossistema definitivo para criadores e devs",
+    description: "Utilitários web rápidos, elegantes e diretos ao ponto. Descubra nossas ferramentas.",
+    creator: "@kadu",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

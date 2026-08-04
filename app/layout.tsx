@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "KADU",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/image-seo.webp",
         width: 1200,
         height: 630,
         alt: "KADU Ecossistema",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "KADU | O ecossistema definitivo para criadores e devs",
     description: "Utilitários web rápidos, elegantes e diretos ao ponto. Descubra nossas ferramentas.",
     creator: "@kadu",
-    images: ["/og-image.jpg"],
+    images: ["/image-seo.webp"],
   },
   robots: {
     index: true,
